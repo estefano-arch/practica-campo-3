@@ -1,1 +1,44 @@
+package Main;
 
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+		
+		
+		public class Divison {
+		    public static void main(String[] args) {
+		        Scanner numeros = new Scanner(System.in);
+		        
+		        try {
+		            // Solicitar el primer número
+		            System.out.print("Ingresar primer número ");
+		            int a = numeros.nextInt();
+		            
+		            // Solicitar el segundo número
+		            System.out.print("Ingresar el segundo número ");
+		            int b = numeros.nextInt();
+		            
+		            //Convertiendo el sugundo numero a double para tener un resultado decimal cuando b es mayor
+		            double c = b;
+		            
+		            // Operar la divisón
+		            double resultado = a / c;
+		            
+		            // Mostrar el resultado
+		            System.out.println("El resultado de la división es: " + resultado);
+		            
+		        } catch (ArithmeticException e) {
+		            // Manejar división entre cero
+		            System.out.println("Error: división entre cero no valida");
+		            
+		        } catch (InputMismatchException e) {
+		            // Manejar entrada no válida (no números)
+		            System.out.println("Error: debe ingresar solo números enteros");
+		            
+		        } finally {
+		            // Cerrar el scanner
+		            numeros.close();
+		        }
+		    }	
+
+	}
